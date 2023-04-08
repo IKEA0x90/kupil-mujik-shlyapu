@@ -162,6 +162,17 @@ multiturretmk2.attack_parameters.cooldown = 2
 multiturretmk2.attack_parameters.range = 30
 multiturretmk2.max_health = 800
 
+local long_boi_attack_splash = table.deepcopy(data.raw["fire"]["acid-splash-fire-worm-behemoth"])
+long_boi_attack_splash.name = "long-boi-attack-splash"
+long_boi_attack_splash.on_damage_tick_effect.action_delivery.target_effects[1].damage = {1.2, type = "laser"}
+long_boi_attack_splash.damage_per_tick = {amount = 0 / 60, type = "laser"}
+
+local long_boi_attack = table.deepcopy(data.raw["stream"]["acid-stream-worm-behemoth"])
+long_boi_attack.name = "long-boi-attack"
+long_boi_attack.initial_action[2].action_delivery.target_effects[2].damage = {amount = 1, type = "laser"}
+long_boi_attack.initial_action[1].action_delivery.target_effects[2].entity_name = "long-boi-attack-splash"
+long_boi_attack.special_neutral_target_damage = {amount = 1, type = "laser"}
+
 local bioturret = table.deepcopy(data.raw["turret"]["behemoth-worm-turret"])
 bioturret.flags = {"placeable-player", "placeable-off-grid", "not-repairable", "breaths-air", "player-creation"}
 bioturret.name = "bioturret"
@@ -178,6 +189,7 @@ bioturret.attack_parameters.min_range = 20
 bioturret.attack_parameters.turn_range = 0.4
 bioturret.allow_turning_when_starting_attack = false
 bioturret.turret_base_has_direction = true
+bioturret.attack_parameters.ammo_type.action.action_delivery.stream = "long-boi-attack"
 
 data:extend({
 
@@ -185,6 +197,8 @@ data:extend({
     beam,
     multiturret,
     multiturretmk2,
+    long_boi_attack_splash,
+    long_boi_attack,
     bioturret,
 
     {

@@ -274,4 +274,29 @@ data:extend(
         {type="item", name="living-wall", amount=10, probability = 1},
       },
   },
+  {
+    type = "recipe",
+    name = "radar-mk2",
+    ingredients =
+    {
+      {"electronic-circuit", 10},
+      {"iron-gear-wheel", 10},
+      {"iron-plate", 20},
+      {"copper-plate", 20},
+      {"steel-plate", 5}
+    },
+    result = "radar-mk2"
+  },
+  {
+    type = "recipe",
+    name = "robocharger",
+    ingredients =
+    {
+      {"advanced-circuit", 10},
+      {"interesting-battery-charged", 1},
+      {"steel-plate", 20},
+      {"accumulator", 2}
+    },
+    result = "robocharger"
+  },
 })

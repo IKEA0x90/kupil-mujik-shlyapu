@@ -71,4 +71,24 @@ data:extend(
     stack_size = 200,
     place_result = "living-wall"
   },
+  {
+    type = "item",
+    name = "radar-mk2",
+    icon = "__base__/graphics/icons/radar.png",
+    icon_size = 64, icon_mipmaps = 4,
+    subgroup = "defensive-structure",
+    order = "d[radarmk2]-a[radarmk2]",
+    place_result = "radar-mk2",
+    stack_size = 50
+  },
+  {
+    type = "item",
+    name = "robocharger",
+    icon = "__base__/graphics/icons/roboport.png",
+    icon_size = 64, icon_mipmaps = 4,
+    subgroup = "logistic-network",
+    order = "zc[signal]-a[robocharger]",
+    place_result = "robocharger",
+    stack_size = 10
+  },
 })
