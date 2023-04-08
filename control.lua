@@ -1,3 +1,4 @@
+require("prototypes/utopia/portal-control.lua")
 
 local events = defines.events
 local built = { events.on_built_entity, events.on_robot_built_entity }

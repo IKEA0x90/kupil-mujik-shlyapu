@@ -1,4 +1,5 @@
 local p = "prototypes/"
+local pu = "prototypes/utopia/"
 
 require(p.."item")
 require(p.."recipe")
@@ -9,3 +10,6 @@ require(p.."other-useful")
 
 require(p.."fish")
 require(p.."turrets")
+require(p.."resources")
+
+require(pu.."portal")

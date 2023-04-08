@@ -602,5 +602,13 @@ data:extend({
       start_scale = 0.5,
       fade_in_duration = 30
     },
+    {
+        type = "item-subgroup",
+        order = "zzz",
+        name = "utopia",
+        group = "logistics",
+        localised_description	= "Utopia",
+        localised_name = "Utopia"
+    },
 
 })
