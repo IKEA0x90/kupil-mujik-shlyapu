@@ -172,11 +172,50 @@ for _, picture in pairs(living_wall.pictures) do
   end
 end
 
+local radar_mk2 = table.deepcopy(data.raw["radar"]["radar"])
+radar_mk2.name = "radar-mk2"
+radar_mk2.energy_per_sector = "30MJ"
+radar_mk2.max_distance_of_sector_revealed = 30
+radar_mk2.max_distance_of_nearby_sector_revealed = 10
+radar_mk2.energy_per_nearby_scan = "2MJ" 
+radar_mk2.energy_usage = "1MW"
+radar_mk2.rotation_speed = 0.2
+radar_mk2.minable = {mining_time = 0.5, result = "radar-mk2"}
+
+local robocharger = table.deepcopy(data.raw["roboport"]["roboport"])
+robocharger.name = "robocharger"
+robocharger.minable = {mining_time = 0.5, result = "robocharger"}
+robocharger.energy_source =
+  {
+    type = "electric",
+    usage_priority = "secondary-input",
+    input_flow_limit = "100MW",
+    buffer_capacity = "500MJ"
+  }
+robocharger.charging_energy = "10MW"
+robocharger.construction_radius = 0
+robocharger.logistics_radius = 0
+robocharger.material_slots_count = 0
+robocharger.robot_slots_count = 0
+robocharger.charging_offsets = {
+  { -1, 1 },
+  { 0, 1 },
+  { 1, 1 },
+  { -1, 0 },
+  { 0, 0 },
+  { 1, 0 },
+  { -1, -1 },
+  { 0, -1 },
+  { 1, -1 },
+}
+
 data:extend(
 {
     discharger,
     charger,
     living_wall,
+    radar_mk2,
+    robocharger,
     {
       type = "car",
       name = "brr",
