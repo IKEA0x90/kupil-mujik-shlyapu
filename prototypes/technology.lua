@@ -121,4 +121,49 @@ data:extend({
     count = 300
     }
   },
+  {
+    type = "technology",
+    name = "radar-mk2",
+    icon = "__base__/graphics/technology/optics.png",
+    icon_size = 256, icon_mipmaps = 4,
+    effects = {
+      {
+        type = "unlock-recipe",
+        recipe = "radar-mk2"
+      },
+    },
+    prerequisites = { "radar" },
+    unit = {
+      ingredients = {
+        { "automation-science-pack", 1 },
+        { "logistic-science-pack", 1 },
+        { "chemical-science-pack", 1 },
+        {"military-science-pack", 1}
+      },
+      time = 10,
+      count = 300
+    }
+  },
+  {
+    type = "technology",
+    name = "robocharger",
+    icon = "__base__/graphics/technology/logistic-robotics.png",
+    icon_size = 256, icon_mipmaps = 4,
+    effects = {
+      {
+        type = "unlock-recipe",
+        recipe = "robocharger"
+      },
+    },
+    prerequisites = { "robotics", "sus-accumulators"},
+    unit = {
+      ingredients = {
+        { "automation-science-pack", 1 },
+        { "logistic-science-pack", 1 },
+        { "chemical-science-pack", 1 },
+      },
+      time = 10,
+      count = 500
+    }
+  },
 })

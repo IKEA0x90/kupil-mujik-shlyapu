@@ -80,7 +80,7 @@ function heal_wall()
 		for i, entity in pairs(global.living) do
 			if entity and entity.valid then
                 if (entity.health) and (entity.health <= entity.prototype.max_health) then
-                    entity.health = entity.health + 0.1
+                    entity.health = entity.health + 360
                 end
             else
                 table.remove(global.living, i)
@@ -93,7 +93,7 @@ Event.addListener(defines.events.on_built_entity, handle_placement_built)
 Event.addListener(defines.events.on_robot_built_entity, handle_placement_built)
 Event.addListener(defines.events.script_raised_built, handle_placement_built)
 Event.addListener(defines.events.script_raised_revive, handle_placement_built)
-Event.addListener(defines.events.on_tick, heal_wall)
+script.on_nth_tick(3600, heal_wall)
 
 function dump(o)
     if type(o) == 'table' then
