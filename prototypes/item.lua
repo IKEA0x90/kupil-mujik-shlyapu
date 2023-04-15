@@ -91,4 +91,96 @@ data:extend(
     place_result = "robocharger",
     stack_size = 10
   },
+  {
+    type = "item",
+    name = "kettle",
+    icon = "__base__/graphics/icons/heat-boiler.png",
+    icon_size = 64, icon_mipmaps = 4,
+    subgroup = "energy",
+    order = "z[dead-matter-energy]-c[tear-exchanger]",
+    place_result = "kettle",
+    stack_size = 50
+  },
+  {
+    type = "item",
+    name = "china",
+    icon = "__base__/graphics/icons/steam-turbine.png",
+    icon_size = 64, icon_mipmaps = 4,
+    subgroup = "energy",
+    order = "z[dead-matter-energy]-d[tear-turbine]",
+    place_result = "china",
+    stack_size = 50
+  },
+  {
+    type = "item",
+    name = "uranium-fuel-cell",
+    icon = "__kupil-mujik-shlyapu__/graphics/icons/dead-matter-fuel-cell.png",
+    icon_size = 64, icon_mipmaps = 4,
+    fuel_glow_color = {r=1, g=0, b=0, a=1},
+    pictures =
+    {
+      layers =
+      {
+        {
+          size = 64,
+          filename = "__kupil-mujik-shlyapu__/graphics/icons/dead-matter-fuel-cell.png",
+          scale = 0.25,
+          mipmap_count = 4
+        },
+        {
+          draw_as_light = true,
+          flags = {"light"},
+          size = 64,
+          filename = "__base__/graphics/icons/uranium-fuel-cell-light.png",
+          scale = 0.25,
+          mipmap_count = 4
+        }
+      }
+    },
+    subgroup = "intermediate-product",
+    order = "z[dead-matter-processing]-a[uranium-fuel-cell]",
+    fuel_category = "dead-matter",
+    burnt_result = "used-up-uranium-fuel-cell",
+    fuel_value = "16GJ",
+    stack_size = 50
+  },
+  {
+    type = "item",
+    name = "used-up-uranium-fuel-cell",
+    icon = "__kupil-mujik-shlyapu__/graphics/icons/used-up-dead-matter-fuel-cell.png",
+    icon_size = 64, icon_mipmaps = 4,
+    subgroup = "intermediate-product",
+    order = "z[used-up-dead-matter-fuel-cell]",
+    stack_size = 50
+  },
+  {
+    type = "item",
+    name = "pipe-to-ground",
+    icon = "__kupil-mujik-shlyapu__/graphics/icons/steel-pipe-to-ground.png",
+    icon_size = 64, icon_mipmaps = 4,
+    subgroup = "energy-pipe-distribution",
+    order = "a[pipe]-b[steel-pipe-to-ground]",
+    place_result = "steel-pipe-to-ground",
+    stack_size = 50
+  },
+  {
+    type = "item",
+    name = "pipe",
+    icon = "__kupil-mujik-shlyapu__/graphics/icons/steel-pipe.png",
+    icon_size = 64, icon_mipmaps = 4,
+    subgroup = "energy-pipe-distribution",
+    order = "a[pipe]-a[steel-pipe]",
+    place_result = "steel-pipe",
+    stack_size = 100
+  },
+  {
+    type = "item",
+    name = "storage-tank",
+    icon = "__kupil-mujik-shlyapu__/graphics/icons/steel-storage-tank.png",
+    icon_size = 64, icon_mipmaps = 4,
+    subgroup = "storage",
+    order = "b[fluid]-a[steel-storage-tank]",
+    place_result = "steel-storage-tank",
+    stack_size = 50
+  },
 })

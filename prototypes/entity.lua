@@ -209,6 +209,107 @@ robocharger.charging_offsets = {
   { 1, -1 },
 }
 
+local steel_pipe = table.deepcopy(data.raw["pipe"]["pipe"])
+steel_pipe.name = "steel-pipe"
+steel_pipe.minable = {mining_time = 0.05, result = "steel-pipe"}
+steel_pipe.fluid_box =
+{
+  base_area = 2,
+  pipe_connections =
+  {
+    { position = {0, -1} },
+    { position = {1, 0} },
+    { position = {0, 1} },
+    { position = {-1, 0} }
+  }
+}
+steel_pipe.icon = "__kupil-mujik-shlyapu__/graphics/icons/steel-pipe.png"
+for _, picture in pairs(steel_pipe.pictures) do
+  picture.tint = {r=94/255, g=94/255, b=94/255, a=1}
+  if picture.hr_version then
+    picture.hr_version.tint = {r=94/255, g=94/255, b=94/255, a=1}
+  end
+end
+
+local steel_undergound_pipe = table.deepcopy(data.raw["pipe-to-ground"]["pipe-to-ground"])
+steel_undergound_pipe.name = "steel-pipe-to-ground"
+steel_undergound_pipe.minable = {mining_time = 0.05, result = "steel-pipe-to-ground"}
+steel_undergound_pipe.fluid_box.base_area = 2
+steel_undergound_pipe.fluid_box.pipe_connections[2].max_underground_distance = 20
+steel_undergound_pipe.icon = "__kupil-mujik-shlyapu__/graphics/icons/steel-pipe-to-ground.png"
+
+steel_undergound_pipe.fluid_box.pipe_covers.north.layers[1].tint = {r=94/255, g=94/255, b=94/255, a=1}
+steel_undergound_pipe.fluid_box.pipe_covers.north.layers[1].hr_version.tint = {r=94/255, g=94/255, b=94/255, a=1}
+steel_undergound_pipe.fluid_box.pipe_covers.east.layers[1].tint = {r=94/255, g=94/255, b=94/255, a=1}
+steel_undergound_pipe.fluid_box.pipe_covers.east.layers[1].hr_version.tint = {r=94/255, g=94/255, b=94/255, a=1}
+steel_undergound_pipe.fluid_box.pipe_covers.south.layers[1].tint = {r=94/255, g=94/255, b=94/255, a=1}
+steel_undergound_pipe.fluid_box.pipe_covers.south.layers[1].hr_version.tint = {r=94/255, g=94/255, b=94/255, a=1}
+steel_undergound_pipe.fluid_box.pipe_covers.west.layers[1].tint = {r=94/255, g=94/255, b=94/255, a=1}
+steel_undergound_pipe.fluid_box.pipe_covers.west.layers[1].hr_version.tint = {r=94/255, g=94/255, b=94/255, a=1}
+
+steel_undergound_pipe.pictures.up.tint = {r=94/255, g=94/255, b=94/255, a=1}
+steel_undergound_pipe.pictures.up.hr_version.tint = {r=94/255, g=94/255, b=94/255, a=1}
+steel_undergound_pipe.pictures.down.tint = {r=94/255, g=94/255, b=94/255, a=1}
+steel_undergound_pipe.pictures.down.hr_version.tint = {r=94/255, g=94/255, b=94/255, a=1}
+steel_undergound_pipe.pictures.left.tint = {r=94/255, g=94/255, b=94/255, a=1}
+steel_undergound_pipe.pictures.left.hr_version.tint = {r=94/255, g=94/255, b=94/255, a=1}
+steel_undergound_pipe.pictures.right.tint = {r=94/255, g=94/255, b=94/255, a=1}
+steel_undergound_pipe.pictures.right.hr_version.tint = {r=94/255, g=94/255, b=94/255, a=1}
+
+local steel_reserv = table.deepcopy(data.raw["storage-tank"]["storage-tank"])
+steel_reserv.name = "steel-storage-tank"
+steel_reserv.minable = {mining_time = 0.5, result = "steel-storage-tank"}
+steel_reserv.fluid_box.base_area = 500
+steel_reserv.pictures.picture.sheets[1].tint = {r=94/255, g=94/255, b=94/255, a=1}
+steel_reserv.pictures.picture.sheets[1].hr_version.tint = {r=94/255, g=94/255, b=94/255, a=1}
+
+steel_reserv.fluid_box.pipe_covers.north.layers[1].tint = {r=94/255, g=94/255, b=94/255, a=1}
+steel_reserv.fluid_box.pipe_covers.north.layers[1].hr_version.tint = {r=94/255, g=94/255, b=94/255, a=1}
+steel_reserv.fluid_box.pipe_covers.east.layers[1].tint = {r=94/255, g=94/255, b=94/255, a=1}
+steel_reserv.fluid_box.pipe_covers.east.layers[1].hr_version.tint = {r=94/255, g=94/255, b=94/255, a=1}
+steel_reserv.fluid_box.pipe_covers.south.layers[1].tint = {r=94/255, g=94/255, b=94/255, a=1}
+steel_reserv.fluid_box.pipe_covers.south.layers[1].hr_version.tint = {r=94/255, g=94/255, b=94/255, a=1}
+steel_reserv.fluid_box.pipe_covers.west.layers[1].tint = {r=94/255, g=94/255, b=94/255, a=1}
+steel_reserv.fluid_box.pipe_covers.west.layers[1].hr_version.tint = {r=94/255, g=94/255, b=94/255, a=1}
+
+local heat_tears =  table.deepcopy(data.raw["boiler"]["heat-exchanger"])
+heat_tears.name = "kettle"
+heat_tears.mode = "heat-water-inside"
+heat_tears.minable = {mining_time = 0.1, result = "kettle"}
+heat_tears.fluid_box =
+{
+  base_area = 1,
+  height = 2,
+  base_level = -1,
+  pipe_covers = pipecoverspictures(),
+  pipe_connections =
+  {
+    {type = "input-output", position = {-2, 0.5}},
+    {type = "input-output", position = {2, 0.5}}
+  },
+  production_type = "input-output",
+  filter = "samurai-tears"
+}
+
+local consume_tears = table.deepcopy(data.raw["generator"]["steam-turbine"])
+consume_tears.name = "china"
+consume_tears.minable = {mining_time = 0.1, result = "china"}
+consume_tears.fluid_box =
+{
+  base_area = 1,
+  height = 2,
+  base_level = -1,
+  pipe_covers = pipecoverspictures(),
+  pipe_connections =
+  {
+    { type = "input-output", position = {0, 3} },
+    { type = "input-output", position = {0, -3} }
+  },
+  production_type = "input-output",
+  filter = "samurai-tears",
+  minimum_temperature = 200.0
+}
+
 data:extend(
 {
     discharger,
@@ -216,6 +317,11 @@ data:extend(
     living_wall,
     radar_mk2,
     robocharger,
+    heat_tears,
+    consume_tears,
+    steel_pipe,
+    steel_undergound_pipe,
+    steel_reserv,
     {
       type = "car",
       name = "brr",

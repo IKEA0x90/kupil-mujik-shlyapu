@@ -276,6 +276,7 @@ data:extend(
   },
   {
     type = "recipe",
+    enabled = false,
     name = "radar-mk2",
     ingredients =
     {
@@ -290,6 +291,7 @@ data:extend(
   {
     type = "recipe",
     name = "robocharger",
+    enabled = false,
     ingredients =
     {
       {"advanced-circuit", 10},

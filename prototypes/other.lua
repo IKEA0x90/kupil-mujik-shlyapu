@@ -591,6 +591,12 @@ data:extend({
     },
     {
         type = "fuel-category",
+        name = "dead-fuel",
+        localised_name = "D3AD",
+        localised_description = "edgy"
+    },
+    {
+        type = "fuel-category",
         name = "sus-battery",
         localised_name = "sus batteries",
         localised_description = "this will probably kill you"
