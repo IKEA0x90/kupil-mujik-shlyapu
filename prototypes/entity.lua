@@ -274,11 +274,12 @@ steel_reserv.fluid_box.pipe_covers.west.layers[1].hr_version.tint = {r=94/255, g
 
 local heat_tears =  table.deepcopy(data.raw["boiler"]["heat-exchanger"])
 heat_tears.name = "kettle"
-heat_tears.mode = "heat-water-inside"
+heat_tears.mode = "output-to-separate-pipe"
 heat_tears.minable = {mining_time = 0.1, result = "kettle"}
+heat_tears.target_temperature = 200
 heat_tears.fluid_box =
 {
-  base_area = 1,
+  base_area = 2,
   height = 2,
   base_level = -1,
   pipe_covers = pipecoverspictures(),
@@ -288,6 +289,19 @@ heat_tears.fluid_box =
     {type = "input-output", position = {2, 0.5}}
   },
   production_type = "input-output",
+  filter = "samurai-tears"
+}
+heat_tears.output_fluid_box =
+{
+  base_area = 2,
+  height = 2,
+  base_level = 1,
+  pipe_covers = pipecoverspictures(),
+  pipe_connections =
+  {
+    {type = "output", position = {0, -1.5}}
+  },
+  production_type = "output",
   filter = "samurai-tears"
 }
 
@@ -307,7 +321,99 @@ consume_tears.fluid_box =
   },
   production_type = "input-output",
   filter = "samurai-tears",
-  minimum_temperature = 200.0
+  minimum_temperature = 200.0,
+  maximum_temperature = 200.0
+}
+consume_tears.smoke =
+{
+  {
+    name = "cyan-smoke-big",
+    north_position = {0.0, -1.0},
+    east_position = {0.75, -0.75},
+    frequency = 10 / 32,
+    starting_vertical_speed = 0.08,
+    slow_down_factor = 1,
+    starting_frame_deviation = 60
+  }
+}
+consume_tears.fluid_usage_per_tick = 120
+
+local dead_reactor = table.deepcopy(data.raw["reactor"]["nuclear-reactor"])
+dead_reactor.name = "dead-reactor"
+dead_reactor.minable = {mining_time = 0.5, result = "dead-reactor"}
+dead_reactor.working_light_picture =     {
+  filename = "__kupil-mujik-shlyapu__/graphics/entity/nuclear-reactor/reactor-lights-color.png",
+  blend_mode = "additive",
+  draw_as_glow = true,
+  width = 160,
+  height = 160,
+  shift = { -0.03125, -0.1875 },
+  hr_version =
+  {
+    filename = "__kupil-mujik-shlyapu__/graphics/entity/nuclear-reactor/hr-reactor-lights-color.png",
+    blend_mode = "additive",
+    draw_as_glow = true,
+    width = 320,
+    height = 320,
+    scale = 0.5,
+    shift = { -0.03125, -0.1875 },
+  }
+}
+dead_reactor.heat_buffer.max_temperature = 2000
+dead_reactor.consumption = "70MW"
+dead_reactor.neighbour_bonus = 0.75
+dead_reactor.energy_source.fuel_category = "dead-fuel"
+dead_reactor.meltdown_action =
+{
+  type = "direct",
+  action_delivery =
+  {
+    type = "instant",
+    target_effects =
+    {
+      {
+          repeat_count = 100,
+          type = "create-trivial-smoke",
+          smoke_name = "nuclear-smoke",
+          offset_deviation = {{-1, -1}, {1, 1}},
+          starting_frame = 3,
+          starting_frame_deviation = 5,
+          starting_frame_speed = 0,
+          starting_frame_speed_deviation = 5,
+          speed_from_center = 0.5
+      },
+      {
+        type = "create-entity",
+        entity_name = "explosion"
+      },
+      {
+        type = "damage",
+        damage = {amount = 400, type = "explosion"}
+      },
+      {
+        type = "create-entity",
+        entity_name = "small-scorchmark",
+        check_buildability = true
+      },
+      {
+        type = "nested-result",
+        action =
+        {
+          type = "area",
+          target_entities = false,
+          trigger_from_target = true,
+          repeat_count = 2000,
+          radius = 35,
+          action_delivery =
+          {
+            type = "projectile",
+            projectile = "atomic-bomb-wave",
+            starting_speed = 0.5
+          }
+        }
+      }
+    }
+  }
 }
 
 data:extend(
@@ -322,6 +428,7 @@ data:extend(
     steel_pipe,
     steel_undergound_pipe,
     steel_reserv,
+    dead_reactor,
     {
       type = "car",
       name = "brr",

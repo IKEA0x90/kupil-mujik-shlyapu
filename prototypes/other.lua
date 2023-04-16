@@ -608,5 +608,12 @@ data:extend({
       start_scale = 0.5,
       fade_in_duration = 30
     },
+    trivial_smoke
+    {
+      name = "cyan-smoke-big",
+      color = {r = 143/255, g = 249/255, b = 237/255, a = 1},
+      start_scale = 0.5,
+      fade_in_duration = 30
+    },
 
 })

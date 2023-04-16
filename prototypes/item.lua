@@ -94,26 +94,26 @@ data:extend(
   {
     type = "item",
     name = "kettle",
-    icon = "__base__/graphics/icons/heat-boiler.png",
+    icon = "__kupil-mujik-shlyapu__/graphics/icons/kettle.png",
     icon_size = 64, icon_mipmaps = 4,
     subgroup = "energy",
-    order = "z[dead-matter-energy]-c[tear-exchanger]",
+    order = "z[dead-energy]-c[tear-exchanger]",
     place_result = "kettle",
     stack_size = 50
   },
   {
     type = "item",
     name = "china",
-    icon = "__base__/graphics/icons/steam-turbine.png",
+    icon = "__kupil-mujik-shlyapu__/graphics/icons/china.png",
     icon_size = 64, icon_mipmaps = 4,
     subgroup = "energy",
-    order = "z[dead-matter-energy]-d[tear-turbine]",
+    order = "z[dead-energy]-d[tear-turbine]",
     place_result = "china",
     stack_size = 50
   },
   {
     type = "item",
-    name = "uranium-fuel-cell",
+    name = "dead-fuel-cell",
     icon = "__kupil-mujik-shlyapu__/graphics/icons/dead-matter-fuel-cell.png",
     icon_size = 64, icon_mipmaps = 4,
     fuel_glow_color = {r=1, g=0, b=0, a=1},
@@ -138,24 +138,24 @@ data:extend(
       }
     },
     subgroup = "intermediate-product",
-    order = "z[dead-matter-processing]-a[uranium-fuel-cell]",
-    fuel_category = "dead-matter",
-    burnt_result = "used-up-uranium-fuel-cell",
+    order = "z[dead-energy]-a[dead-fuel-cell]",
+    fuel_category = "dead-fuel",
+    burnt_result = "used-up-dead-fuel-cell",
     fuel_value = "16GJ",
     stack_size = 50
   },
   {
     type = "item",
-    name = "used-up-uranium-fuel-cell",
+    name = "used-up-dead-fuel-cell",
     icon = "__kupil-mujik-shlyapu__/graphics/icons/used-up-dead-matter-fuel-cell.png",
     icon_size = 64, icon_mipmaps = 4,
     subgroup = "intermediate-product",
-    order = "z[used-up-dead-matter-fuel-cell]",
+    order = "z[used-up-dead-fuel-cell]",
     stack_size = 50
   },
   {
     type = "item",
-    name = "pipe-to-ground",
+    name = "steel-pipe-to-ground",
     icon = "__kupil-mujik-shlyapu__/graphics/icons/steel-pipe-to-ground.png",
     icon_size = 64, icon_mipmaps = 4,
     subgroup = "energy-pipe-distribution",
@@ -165,7 +165,7 @@ data:extend(
   },
   {
     type = "item",
-    name = "pipe",
+    name = "steel-pipe",
     icon = "__kupil-mujik-shlyapu__/graphics/icons/steel-pipe.png",
     icon_size = 64, icon_mipmaps = 4,
     subgroup = "energy-pipe-distribution",
@@ -175,12 +175,41 @@ data:extend(
   },
   {
     type = "item",
-    name = "storage-tank",
+    name = "steel-storage-tank",
     icon = "__kupil-mujik-shlyapu__/graphics/icons/steel-storage-tank.png",
     icon_size = 64, icon_mipmaps = 4,
     subgroup = "storage",
     order = "b[fluid]-a[steel-storage-tank]",
     place_result = "steel-storage-tank",
     stack_size = 50
+  },
+  {
+    type = "item",
+    name = "dead-reactor",
+    icon = "__kupil-mujik-shlyapu__/graphics/icons/dead-reactor.png",
+    icon_size = 64, icon_mipmaps = 4,
+    subgroup = "energy",
+    order = "f[dead-energy]-a[reactor]",
+    place_result = "dead-reactor",
+    stack_size = 10
+  },
+  {
+    type = "item",
+    name = "dead-matter",
+    icon = "__kupil-mujik-shlyapu__/graphics/icons/dead-matter.png",
+    icon_size = 64, icon_mipmaps = 4,
+    subgroup = "raw-material",
+    order = "z[dead-energy]",
+    stack_size = 500
+  },
+  {
+    type = "item",
+    name = "dead-data",
+    icon = "__kupil-mujik-shlyapu__/graphics/icons/dead-data.png",
+    icon_size = 64, icon_mipmaps = 4,
+    subgroup = "space-related",
+    order = "z[dead-data]",
+    stack_size = 1,
+    rocket_launch_product = {name="dead-matter", amount=10000},
   },
 })
