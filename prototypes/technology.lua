@@ -146,6 +146,37 @@ data:extend({
   },
   {
     type = "technology",
+    name = "steel-pipes",
+    icon = "__kupil-mujik-shlyapu__/graphics/technology/pipes.png",
+    icon_size = 256, icon_mipmaps = 4,
+    effects = {
+      {
+        type = "unlock-recipe",
+        recipe = "steel-pipe"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "steel-pipe-to-ground"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "steel-storage-tank"
+      },
+    },
+    prerequisites = { "fluid-handling", "steel-processing"},
+    unit = {
+      ingredients = {
+        { "automation-science-pack", 1 },
+        { "logistic-science-pack", 1 },
+        { "chemical-science-pack", 1 },
+        { "se-rocket-science-pack", 1 },
+      },
+      time = 10,
+      count = 100
+    }
+  },
+  {
+    type = "technology",
     name = "robocharger",
     icon = "__base__/graphics/technology/logistic-robotics.png",
     icon_size = 256, icon_mipmaps = 4,

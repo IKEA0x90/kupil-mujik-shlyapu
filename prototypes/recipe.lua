@@ -127,7 +127,7 @@ data:extend(
     type = "recipe",
     name = "samurai-tears",
     category = "chemistry",
-    energy_required = 2,
+    energy_required = 1,
     hide_from_player_crafting = true,
     ingredients =
     {
@@ -300,5 +300,37 @@ data:extend(
       {"accumulator", 2}
     },
     result = "robocharger"
+  },
+  {
+    type = "recipe",
+    enabled = false,
+    name = "steel-pipe",
+    ingredients =
+    {
+      {"steel-plate", 1},
+    },
+    result = "steel-pipe"
+  },
+  {
+    type = "recipe",
+    enabled = false,
+    name = "steel-pipe-to-ground",
+    ingredients =
+    {
+      {"steel-plate", 10},
+      {"steel-pipe", 10}
+    },
+    result_count = 2,
+    result = "steel-pipe-to-ground"
+  },
+  {
+    type = "recipe",
+    enabled = false,
+    name = "steel-storage-tank",
+    ingredients =
+    {
+      {"steel-plate", 25},
+    },
+    result = "steel-storage-tank"
   },
 })

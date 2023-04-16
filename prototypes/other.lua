@@ -231,8 +231,19 @@ napalmFire.fade_out_duration = 60
 napalmFire.lifetime_increase_by = 0
 napalmFire.pictures = napalmtuil.create_fire_pictures({ blend_mode = "normal", animation_speed = 1, scale = 0.5 })
 
+local long_smoke_p = table.deepcopy(data.raw["projectile"]["poison-capsule"])
+long_smoke_p.name = "long-smoke-projectile"
+long_smoke_p.action[1].action_delivery.target_effects[1].entity_name = "long-smoke"
+
+local long_smoke = table.deepcopy(data.raw["smoke-with-trigger"]["poison-cloud"])
+long_smoke.name = "long-smoke"
+long_smoke.duration = 60 * 3600
+long_smoke.action.action_delivery.target_effects.action.action_delivery.target_effects.damage.amount = 30
+
 data:extend({
     napalmFire,
+    long_smoke,
+    long_smoke_p,
     {
         type = "projectile",
         name = "molotov-cocktail",
