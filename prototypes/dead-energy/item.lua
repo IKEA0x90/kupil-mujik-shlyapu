@@ -161,4 +161,16 @@ data:extend({
 		  maximum = 1.0,
 		},
     },
+    {
+      type = "fluid",
+      name = "dead-matter-solution",
+      default_temperature = 0,
+      max_temperature = 0,
+      heat_capacity = "0J",
+      base_color = {r=146/255, g=249/255, b=239/255}, -- TODO
+      flow_color = {r=211/255, g=246/255, b=1}, --TOOD
+      icon = "__kupil-mujik-shlyapu__/graphics/icons/", --TODO
+      icon_size = 64, icon_mipmaps = 4,
+      order = "z[dead-matter-solution]"
+    },
 })
