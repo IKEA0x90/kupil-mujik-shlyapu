@@ -17,6 +17,7 @@ script.on_event(events.on_player_placed_equipment, function(event)
     if event.equipment.name == "head-crab" then
 		player.character_crafting_speed_modifier = player.character_crafting_speed_modifier + 5
         player.character_inventory_slots_bonus = player.character_inventory_slots_bonus + 20
+        player.character_running_speed_modifier = player.character_running_speed_modifier + 4
         if (global.crabs == nil) then 
             global.crabs = {}
         end
@@ -42,10 +43,16 @@ script.on_event(events.on_player_removed_equipment, function(event)
         if event.count >= 0 then
             local crafting = player.character_crafting_speed_modifier - (5 * event.count)
             local inventory = player.character_inventory_slots_bonus - (20 * event.count)
+            local speed = player.character_running_speed_modifier - (4 * event.count)
           
             if crafting >= 0 then
               player.character_crafting_speed_modifier = crafting
-              player.character_inventory_slots_bonus = inventory
+            end
+            if inventory > 0 then
+                player.character_inventory_slots_bonus = inventory
+            end
+            if speed > 0 then
+                player.character_running_speed_modifier = speed
             end
 
             if (global.crabs == nil) then 
@@ -70,6 +77,7 @@ script.on_event(defines.events.on_player_armor_inventory_changed, function(event
 		local total_crafting = 0
 		local total_inventory = 0
         local total_crabs = 0
+        local total_speed = 0
 				
 		local grid = armor[1].grid
 
@@ -79,6 +87,7 @@ script.on_event(defines.events.on_player_armor_inventory_changed, function(event
                 if grid.equipment[i].name == "head-crab" then
                     total_crafting = total_crafting + 5
                     total_inventory = total_inventory + 20
+                    total_speed = total_speed + 4
                     total_crabs = total_crabs + 1
                 end
 
@@ -90,7 +99,8 @@ script.on_event(defines.events.on_player_armor_inventory_changed, function(event
                     if (global.crabs[player.index]) then
                         die_player(player)
                     end
-			end
+			    end
+            end
         end
 
 		if grid ~= nil then
@@ -105,12 +115,14 @@ script.on_event(defines.events.on_player_armor_inventory_changed, function(event
                 if grid.equipment[i].name == "head-crab" then
                     total_crafting = total_crafting + 5
                     total_inventory = total_inventory + 20
+                    total_speed = total_speed + 3
                     total_crabs = total_crabs + 1
                 end
 			end
 
-			set_inventory1(player, total_crafting)
-            set_inventory2(player, total_inventory)
+			set_inventory(player.character_crafting_speed_modifier, total_crafting)
+            set_inventory(player.character_inventory_slots_bonus, total_inventory)
+            set_inventory(player.character_running_speed_modifier, total_speed)
 
             if (total_crabs > 0) then
                 if (global.crabs == nil) then 
@@ -132,14 +144,6 @@ end)
 function clear_all_bonuses(player)
 	player.character_crafting_speed_modifier = 0
     player.character_inventory_slots_bonus = 0
-end
-
-function set_inventory1(player, count)
-	player.character_crafting_speed_modifier = count
-end
-
-function  set_inventory2(player, count)
-    player.character_inventory_slots_bonus = count
 end
 
 function die_player(player)
@@ -201,4 +205,4 @@ function dump(o)
     else
        return tostring(o)
     end
-  end
+end

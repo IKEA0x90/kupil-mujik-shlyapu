@@ -136,15 +136,16 @@ data:extend({
           height = 8,
           type = "full"
         },
-        energy_input = "100kW",
+        energy_input = "0kW",
         color_lookup = {{0, "__core__/graphics/color_luts/lut-sunset.png"}},
         energy_source =
         {
-          type = "void",
+          type = "electric",
+          buffer_capacity = "0kJ",
+          input_flow_limit = "0kW",
           usage_priority = "primary-input"
         },
         energy_consumption = "0kW",
-        movement_bonus = 2,
         categories = {"armor-jetpack"},
         desaturation_params = 
 		{ 

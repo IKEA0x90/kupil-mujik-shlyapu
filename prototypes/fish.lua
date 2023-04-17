@@ -391,15 +391,15 @@ data:extend({
           {
           type="fluid", 
           name="gamer-juice", 
-          amount=120
+          amount=200
           },
           {
             type="fluid", 
             name="molten-copper", 
-            amount = 60
+            amount = 200
           },
           {"gamer-juice-fish", 1},
-          {"logistic-robot", 5}
+          {"logistic-robot", 3}
         },
         crafting_machine_tint =
         {
@@ -462,15 +462,15 @@ data:extend({
         {
         type="fluid", 
         name="gamer-juice", 
-        amount=120
+        amount=200
         },
         {
           type="fluid", 
           name="molten-iron", 
-          amount=60
+          amount=200
         },
         {"gamer-juice-fish-iron", 1},
-        {"construction-robot", 5}
+        {"construction-robot", 3}
       },
       crafting_machine_tint =
       {
