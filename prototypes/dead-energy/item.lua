@@ -13,7 +13,7 @@ data:extend({
         type = "item",
         name = "dead-matter",
         icon = "__kupil-mujik-shlyapu__/graphics/icons/dead-matter.png",
-        icon_size = 64, icon_mipmaps = 4,
+        icon_size = 64, icon_mipmaps = 1,
         subgroup = "raw-material",
         order = "z[dead-energy]",
         stack_size = 500
@@ -27,6 +27,15 @@ data:extend({
         order = "z[dead-data]",
         stack_size = 1,
         rocket_launch_product = {name="dead-matter", amount=10000},
+    },
+    {
+        type = "item",
+        name = "dead-data-prepare",
+        icon = "__kupil-mujik-shlyapu__/graphics/icons/dead-data-prepare.png",
+        icon_size = 64, icon_mipmaps = 1,
+        subgroup = "raw-material",
+        order = "z[dead-data-prepare]",
+        stack_size = 100,
     },
     {
         type = "item",
@@ -99,5 +108,57 @@ data:extend({
         order = "f[dead-energy]-b[glass-pipe]",
         place_result = "glass-pipe",
         stack_size = 50
-      },
+      }, 
+      {
+        type = "item",
+        name = "head-crab",
+        icon = "__kupil-mujik-shlyapu__/graphics/icons/head-crab.png",
+        icon_size = 194, icon_mipmaps = 1,
+        placed_as_equipment_result = "head-crab",
+        subgroup = "equipment",
+        order = "z[head-crab]",
+        default_request_amount = 1,
+        stack_size = 1
+    },
+      {
+        type = "night-vision-equipment",
+        name = "head-crab",
+        sprite =
+        {
+          filename = "__kupil-mujik-shlyapu__/graphics/icons/head-crab.png",
+          width = 194,
+          height = 194,
+          priority = "medium",
+        },
+        shape =
+        {
+          width = 8,
+          height = 8,
+          type = "full"
+        },
+        energy_input = "100kW",
+        color_lookup = {{0, "__core__/graphics/color_luts/lut-sunset.png"}},
+        energy_source =
+        {
+          type = "void",
+          usage_priority = "primary-input"
+        },
+        energy_consumption = "0kW",
+        movement_bonus = 2,
+        categories = {"armor-jetpack"},
+        desaturation_params = 
+		{ 
+		  smoothstep_min = 0.1,
+		  smoothstep_max = 0.7,
+		  minimum = 0.3,
+		  maximum = 1.0
+		},
+		light_params = 
+		{ 
+		  smoothstep_min = 0.1,
+		  smoothstep_max = 0.7,
+		  minimum = 0.666,
+		  maximum = 1.0,
+		},
+    },
 })

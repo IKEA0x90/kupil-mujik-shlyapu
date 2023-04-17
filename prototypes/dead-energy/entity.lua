@@ -591,8 +591,38 @@ glass_pipe.heat_glow_sprites = make_heat_pipe_pictures("__base__/graphics/entity
 
 glass_pipe.heat_buffer.max_temperature = 2000
 
+local dead_converter = table.deepcopy(data.raw["burner-generator"]["burner-generator"])
+dead_converter.name = "dead-converter"
+dead_converter.flags = {"placeable-off-grid", "player-creation", "breaths-air", "not-repairable", "not-blueprintable", "not-deconstructable", "not-upgradable" }
+dead_converter.icon = data.raw["turret"]["medium-worm-turret"].icon
+dead_converter.corpse = data.raw["turret"]["medium-worm-turret"].remnants
+dead_converter.collision_box = data.raw["turret"]["medium-worm-turret"].collision_box
+dead_converter.selection_box = data.raw["turret"]["medium-worm-turret"].selection_box
+dead_converter.drawing_box = data.raw["turret"]["medium-worm-turret"].drawing_box
+dead_converter.max_power_output = "500kW"
+dead_converter.minable = nil
+dead_converter.animation = data.raw["turret"]["medium-worm-turret"].prepared_animation
+dead_converter.burner = {
+  fuel_category = "fish-fuel",
+    effectivity = 1,
+    fuel_inventory_size = 1,
+    burnt_inventory_size = 1,
+    emissions_per_minute = 0,
+    smoke =
+    {
+      {
+        name = "cyan-smoke-big",
+        north_position = {0.0, 0.0},
+        east_position = {0.0, 0.0},
+        deviation = {0.1, 0.1},
+        frequency = 1
+      }
+    }
+}
+
 data:extend(
 {
+    dead_converter,
     heat_tears,
     consume_tears,
     dead_reactor,
