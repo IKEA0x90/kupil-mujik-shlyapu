@@ -213,4 +213,25 @@ data:extend({
         order = "z[dead-plate]",
         stack_size = 5
       },
+
+      {
+        type = "item",
+        name = "dead-logistic-drone",
+        icon = "__kupil-mujik-shlyapu__/graphics/icons/dead-l.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "logistic-network",
+        order = "z[dead-logistics]",
+        place_result = "dead-logistic-drone",
+        stack_size = 50
+    },
+    {
+      type = "item",
+      name = "dead-construction-drone",
+      icon = "__kupil-mujik-shlyapu__/graphics/icons/dead-c.png",
+      icon_size = 64, icon_mipmaps = 4,
+      subgroup = "logistic-network",
+      order = "z[dead-construction]",
+      place_result = "dead-construction-drone",
+      stack_size = 50
+    },
 })
