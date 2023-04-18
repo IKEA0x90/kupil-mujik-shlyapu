@@ -333,4 +333,21 @@ data:extend(
     },
     result = "steel-storage-tank"
   },
+  {
+    type = "recipe",
+    name = "copper-cable-from-con",
+    ingredients = {{"copper-iron-plate", 1}},
+    result = "copper-cable",
+    result_count = 4,
+    enabled = false,
+  },
+  {
+    type = "recipe",
+    name = "iron-gear-wheel-from-iropper",
+    ingredients = {{"iron-copper-plate", 1}},
+    result = "iron-gear-wheel",
+    result_count = 1,
+    enabled = false,
+  },
+
 })

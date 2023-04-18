@@ -1,5 +1,5 @@
 data.raw["capsule"]["raw-fish"].fuel_category = "fish-fuel"
 data.raw["capsule"]["raw-fish"].burnt_result = "dead-data-prepare"
-data.raw["capsule"]["raw-fish"].fuel_value = "10kW"
+data.raw["capsule"]["raw-fish"].fuel_value = "1000J"
 data.raw["pipe"]["pipe"].next_upgrade = "steel-pipe"
 data.raw["pipe-to-ground"]["pipe-to-ground"].next_upgrade = "steel-pipe-to-ground"

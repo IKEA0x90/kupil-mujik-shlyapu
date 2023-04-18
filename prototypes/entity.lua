@@ -313,12 +313,13 @@ data:extend(
       collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
       selection_box = {{-0.7, -1.0}, {0.7, 1.0}},
       damaged_trigger_effect = hit_effects.entity(),
-      effectivity = 5,
+      effectivity = 8,
       braking_power = "1000kW",
       burner =
       {
         fuel_category = "fish-fuel",
-        effectivity = 10,
+        effectivity = 200,
+        burnt_inventory_size = 3,
         fuel_inventory_size = 3,
         smoke =
         {
@@ -375,7 +376,7 @@ data:extend(
       weight = 700,
       inventory_size = 200,
       track_particle_triggers = movement_triggers.car,
-      water_reflection = spitter_water_reflection(scale_spitter_behemoth)
+      water_reflection = spitter_water_reflection(scale_spitter_behemoth),
   },
   {
     type = "car",

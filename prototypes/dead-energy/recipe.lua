@@ -96,7 +96,8 @@ data:extend({
     icon = "__kupil-mujik-shlyapu__/graphics/icons/bad-bronze.png",
     icon_size = 64,
     order = "z[bad-bronze]",
-    enabled = false
+    enabled = false,
+    subgroup = "raw-material",
   },
   {
     type = "recipe",
@@ -126,7 +127,7 @@ data:extend({
     enabled = false,
     category = "centrifuging",
     ingredients = {{"dead-plate", 10}, {"rocket-control-unit", 1}},
-    icon = "__base__/graphics/icons/dead-matter-fuel-cell.png",
+    icon = "__kupil-mujik-shlyapu__/graphics/icons/dead-matter-fuel-cell.png",
     icon_size = 64, icon_mipmaps = 4,
     subgroup = "intermediate-product",
     order = "z[dead-matter-processing]-z[cell]",
@@ -154,11 +155,29 @@ data:extend({
     category = "crafting",
     ingredients =
     {
-      {"satellite", 1},
+      {"se-satellite-telemetry", 100},
       {"dead-data-prepare", 321},
     },
     result= "dead-data",
     requester_paste_multiplier = 1
+  },
+  {
+    type = "recipe",
+    name = "head-crab",
+    category = "crafting-with-fluid",
+    enabled = false,
+    energy_required = 20,
+    ingredients =
+      {
+        {"dead-data-prepare", 100},
+        {"light-oil-fish", 20},
+        {"lubricant-fish-equipment", 20},
+        {type = "fluid", name = "samurai-tears", amount = 600}
+      },
+      results=
+      {
+        {type="item", name="head-crab", amount=1, probability = 1},
+      },
   },
   
 })
