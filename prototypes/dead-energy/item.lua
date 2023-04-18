@@ -174,4 +174,43 @@ data:extend({
       icon_size = 64, icon_mipmaps = 4,
       order = "z[dead-matter-solution]"
     },
+    {
+        type = "fluid",
+        name = "bad-bronze",
+        default_temperature = 850,
+        max_temperature = 1050,
+        heat_capacity = "420J",
+        base_color = {r=202/255, g=162/255, b=93/255},
+        flow_color = {r=202/255, g=162/255, b=93/255},
+        icon = "__kupil-mujik-shlyapu__/graphics/icons/bad-bronze.png",
+        icon_size = 64, icon_mipmaps = 4,
+        order = "z[bad-bronze]"
+      },
+      {
+        type = "item",
+        name = "copper-iron-plate",
+        icon = "__kupil-mujik-shlyapu__/graphics/icons/copper-iron.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "raw-material",
+        order = "z[copper-iron]",
+        stack_size = 100
+      },
+      {
+        type = "item",
+        name = "iron-copper-plate",
+        icon = "__kupil-mujik-shlyapu__/graphics/icons/iron-copper.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "raw-material",
+        order = "z[iron-copper]",
+        stack_size = 100
+      },
+      {
+        type = "item",
+        name = "dead-plate",
+        icon = "__kupil-mujik-shlyapu__/graphics/icons/dead-plate.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "raw-material",
+        order = "z[dead-plate]",
+        stack_size = 5
+      },
 })
