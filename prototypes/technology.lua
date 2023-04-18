@@ -146,6 +146,28 @@ data:extend({
   },
   {
     type = "technology",
+    name = "robocharger",
+    icon = "__base__/graphics/technology/logistic-robotics.png",
+    icon_size = 256, icon_mipmaps = 4,
+    effects = {
+      {
+        type = "unlock-recipe",
+        recipe = "robocharger"
+      },
+    },
+    prerequisites = { "robotics", "sus-accumulators"},
+    unit = {
+      ingredients = {
+        { "automation-science-pack", 1 },
+        { "logistic-science-pack", 1 },
+        { "chemical-science-pack", 1 },
+      },
+      time = 10,
+      count = 500
+    }
+  },
+  {
+    type = "technology",
     name = "steel-pipes",
     icon = "__kupil-mujik-shlyapu__/graphics/technology/pipes.png",
     icon_size = 256, icon_mipmaps = 4,
@@ -171,30 +193,43 @@ data:extend({
         { "chemical-science-pack", 1 },
         { "se-rocket-science-pack", 1 },
       },
-      time = 10,
+      time = 20,
       count = 100
     }
   },
   {
     type = "technology",
-    name = "robocharger",
-    icon = "__base__/graphics/technology/logistic-robotics.png",
-    icon_size = 256, icon_mipmaps = 4,
+    name = "bad-bronze",
+    icon = "__kupil-mujik-shlyapu__/graphics/icons/copper-iron.png",
+      icon_size = 64, icon_mipmaps = 4,
     effects = {
       {
         type = "unlock-recipe",
-        recipe = "robocharger"
+        recipe = "copper-cable-from-con"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "iron-gear-wheel-from-iropper"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "bad-bronze"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "copper-iron"
       },
     },
-    prerequisites = { "robotics", "sus-accumulators"},
+    prerequisites = { "rp-molten-metal-basic-smelting" },
     unit = {
       ingredients = {
         { "automation-science-pack", 1 },
         { "logistic-science-pack", 1 },
         { "chemical-science-pack", 1 },
+        { "se-rocket-science-pack", 1 },
       },
       time = 10,
-      count = 500
+      count = 100
     }
   },
 })

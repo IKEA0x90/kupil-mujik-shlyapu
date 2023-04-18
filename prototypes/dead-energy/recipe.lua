@@ -39,68 +39,6 @@ data:extend({
   },
   {
     type = "recipe",
-    name = "bad-bronze",
-    category = "chemistry",
-    energy_required = 1,
-    hide_from_player_crafting = true,
-    ingredients =
-    {
-      {
-        type="fluid", 
-        name="molten-copper", 
-        amount=10
-      },
-      {
-        type="fluid", 
-        name="molten-iron", 
-        amount=10
-      }
-    },
-    crafting_machine_tint =
-    {
-      --[[
-      primary = Main Liqud
-      secondary = Secondary liquid
-      tertiary = Top smoke
-      quaternary = Bottom smoke
-      ]]--
-      base_color = {r=220/255, g=192/255, b=110/255, a = 1.0},
-      secondary = {r=141/255, g=141/255, b=141/255, a = 1.000},
-      tertiary = {r=0, g=0, b=0, a = 0.5},
-      quaternary = {r=0, g=0, b=0, a = 1.0},
-    },
-    results=
-    {
-      {type="fluid", name="bad-bronze", amount=20}
-    },
-    icon = "__kupil-mujik-shlyapu__/graphics/icons/bad-bronze.png",
-    icon_size = 64,
-    order = "z[bad-bronze]",
-    enabled = false
-  },
-  {
-    type = "recipe",
-    name = "copper-iron",
-    category = "smelting",
-    energy_required = 2,
-    hide_from_player_crafting = true,
-    ingredients =
-    {
-        {type="fluid", name="bad-bronze", amount=2}
-    },
-    results=
-    {
-        {type="item", name="copper-iron-plate", amount=1, probability = 0.5},
-        {type="item", name="iron-copper-plate", amount=1, probability = 0.5},
-    },
-    icon = "__kupil-mujik-shlyapu__/graphics/icons/bad-bronze.png",
-    icon_size = 64,
-    order = "z[bad-bronze]",
-    enabled = false,
-    subgroup = "raw-material",
-  },
-  {
-    type = "recipe",
     name = "dead-plate",
     category = "smelting",
     energy_required = 24,
@@ -192,6 +130,7 @@ data:extend({
         amount=200,
       },
       {"gamer-juice-fish", 3},
+      {"powerful-sus-battery", 1},
     },
     crafting_machine_tint =
     {
@@ -223,6 +162,7 @@ data:extend({
             temperature = 1200,
           },
           {"gamer-juice-fish", 3},
+          {"powerful-sus-battery", 1},
         },
         crafting_machine_tint =
         {
@@ -253,6 +193,7 @@ data:extend({
             amount=200,
           },
           {"gamer-juice-fish-iron", 3},
+          {"powerful-sus-battery", 1},
         },
         crafting_machine_tint =
         {
@@ -284,6 +225,7 @@ data:extend({
                 temperature = 1200,
               },
               {"gamer-juice-fish-iron", 3},
+              {"powerful-sus-battery", 1},
             },
             crafting_machine_tint =
             {
