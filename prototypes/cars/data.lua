@@ -138,7 +138,7 @@ data:extend(
             amount=1000
           }
         },
-        result = "brr",
+        result = "car-scrap",
         category="crafting-with-fluid",
         subgroup = "bullet"
     },
@@ -157,7 +157,7 @@ data:extend(
             amount=10000
           }
         },
-        result = "brr",
+        result = "car-shop",
         category="crafting-with-fluid",
         subgroup = "bullet"
     },
@@ -165,6 +165,53 @@ data:extend(
 
 data:extend(
 {
+    {
+        type = "assembling-machine",
+        name = "car-shop",
+        icon = "__kupil-mujik-shlyapu__/graphics/icons/car-shop.png",
+        icon_size = 64, icon_mipmaps = 4,
+        flags = {"placeable-neutral", "placeable-player", "player-creation"},
+        minable = {mining_time = 1, result = "car-shop"},
+        max_health = 300,
+        corpse = "assembling-machine-1-remnants",
+        dying_explosion = "assembling-machine-1-explosion",
+        resistances =
+        {
+          {
+            type = "fire",
+            percent = 70
+          }
+        },
+        collision_box = {{-2.8, -2.8}, {2.8, 2.8}}, 
+        selection_box = {{-3, -3}, {3, 3}},
+        damaged_trigger_effect = hit_effects.entity(),
+        alert_icon_shift = util.by_pixel(-3, -12),
+        crafting_categories = {"car-crafting"},
+        crafting_speed = 2,
+        energy_source =
+        {
+          type = "electric",
+          usage_priority = "secondary-input",
+          emissions_per_minute = 4
+        },
+        energy_usage = "1MW",
+        open_sound = sounds.machine_open,
+        close_sound = sounds.machine_close,
+        vehicle_impact_sound = sounds.generic_impact,
+        working_sound =
+        {
+          sound =
+          {
+            {
+              filename = "__base__/sound/assembling-machine-t1-1.ogg",
+              volume = 0.5
+            }
+          },
+          audible_distance_modifier = 0.5,
+          fade_in_ticks = 4,
+          fade_out_ticks = 20
+        }
+    },
     {
         type = "car",
         name = "brr",
@@ -583,7 +630,50 @@ data:extend(
               scale = 0.5
             }
         },
-        sound_no_fuel = sounds.flying_robot(0.48),
+        sound_no_fuel = {
+            {
+              filename = "__base__/sound/construction-robot-11.ogg", volume = volume
+            },
+            {
+              filename = "__base__/sound/construction-robot-12.ogg", volume = volume
+            },
+            {
+              filename = "__base__/sound/construction-robot-13.ogg", volume = volume
+            },
+            {
+              filename = "__base__/sound/construction-robot-14.ogg", volume = volume
+            },
+            {
+              filename = "__base__/sound/construction-robot-15.ogg", volume = volume
+            },
+            {
+              filename = "__base__/sound/construction-robot-16.ogg", volume = volume
+            },
+            {
+              filename = "__base__/sound/construction-robot-17.ogg", volume = volume
+            },
+            {
+              filename = "__base__/sound/construction-robot-18.ogg", volume = volume
+            },
+            {
+              filename = "__base__/sound/construction-robot-19.ogg", volume = volume
+            },
+            {
+              filename = "__base__/sound/flying-robot-1.ogg", volume = 0.43
+            },
+            {
+              filename = "__base__/sound/flying-robot-2.ogg", volume = 0.43
+            },
+            {
+              filename = "__base__/sound/flying-robot-3.ogg", volume = 0.43
+            },
+            {
+              filename = "__base__/sound/flying-robot-4.ogg", volume = 0.43
+            },
+            {
+              filename = "__base__/sound/flying-robot-5.ogg", volume = 0.43
+            }
+        },
         stop_trigger_speed = 0.15,
         stop_trigger =
         {
@@ -615,7 +705,7 @@ data:extend(
               height = 12,
               shift = util.by_pixel(0, 105),
               variation_count = 1,
-              scale = 5 * scale
+              scale = 5 * 1
             },
             rotate = false,
             orientation_to_variation = false
@@ -697,7 +787,50 @@ data:extend(
               scale = 0.5
             }
         },
-        sound_no_fuel = sounds.flying_robot(0.48),
+        sound_no_fuel = {
+            {
+              filename = "__base__/sound/construction-robot-11.ogg", volume = volume
+            },
+            {
+              filename = "__base__/sound/construction-robot-12.ogg", volume = volume
+            },
+            {
+              filename = "__base__/sound/construction-robot-13.ogg", volume = volume
+            },
+            {
+              filename = "__base__/sound/construction-robot-14.ogg", volume = volume
+            },
+            {
+              filename = "__base__/sound/construction-robot-15.ogg", volume = volume
+            },
+            {
+              filename = "__base__/sound/construction-robot-16.ogg", volume = volume
+            },
+            {
+              filename = "__base__/sound/construction-robot-17.ogg", volume = volume
+            },
+            {
+              filename = "__base__/sound/construction-robot-18.ogg", volume = volume
+            },
+            {
+              filename = "__base__/sound/construction-robot-19.ogg", volume = volume
+            },
+            {
+              filename = "__base__/sound/flying-robot-1.ogg", volume = 0.43
+            },
+            {
+              filename = "__base__/sound/flying-robot-2.ogg", volume = 0.43
+            },
+            {
+              filename = "__base__/sound/flying-robot-3.ogg", volume = 0.43
+            },
+            {
+              filename = "__base__/sound/flying-robot-4.ogg", volume = 0.43
+            },
+            {
+              filename = "__base__/sound/flying-robot-5.ogg", volume = 0.43
+            }
+        },
         stop_trigger_speed = 0.15,
         stop_trigger =
         {
@@ -729,7 +862,7 @@ data:extend(
               height = 12,
               shift = util.by_pixel(0, 105),
               variation_count = 1,
-              scale = 5 * scale
+              scale = 5 * 1
             },
             rotate = false,
             orientation_to_variation = false

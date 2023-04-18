@@ -204,7 +204,7 @@ data:extend({
   {
     type = "technology",
     name = "dead-energy",
-    icon = "__kupil-mujik-shlyapu__/graphics/icons/dead-energy-processing.png",
+    icon = "__kupil-mujik-shlyapu__/graphics/technology/dead-energy-processing.png",
     icon_size = 256, icon_mipmaps = 4,
     effects = {
       {
