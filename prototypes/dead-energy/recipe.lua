@@ -187,61 +187,115 @@ data:extend({
         energy_required = 20,
         ingredients =
         {
-          {
+            {
             type="fluid", 
             name="samurai-tears", 
             amount=200,
-          },
-          {"gamer-juice-fish-iron", 3},
-          {"powerful-sus-battery", 1},
+            },
+            {"gamer-juice-fish-iron", 3},
+            {"powerful-sus-battery", 1},
         },
         crafting_machine_tint =
         {
-          primary = {r=146/255, g=249/255, b=239/255},
-          secondary = {r=242/255, g=129/255, b=1},
-          tertiary = {r=0, g=0, b=0, a = 0},
-          quaternary = {r=0, g=0, b=0, a = 0},
+            primary = {r=146/255, g=249/255, b=239/255},
+            secondary = {r=242/255, g=129/255, b=1},
+            tertiary = {r=0, g=0, b=0, a = 0},
+            quaternary = {r=0, g=0, b=0, a = 0},
         },
         results=
         {
-          {type="item", name="dead-construction-drone", amount=1, probability = 1},
+            {type="item", name="dead-construction-drone", amount=1, probability = 1},
         },
         icon = "__kupil-mujik-shlyapu__/graphics/icons/dead-c.png",
         icon_size = 64,
         order = "z[dead-robot-c]",
         enabled = false
-        },
+    },
+    {
+        type = "recipe",
+        name = "dead-construction-drone-effective",
+        category = "chemistry",
+        energy_required = 6,
+        ingredients =
         {
-            type = "recipe",
-            name = "dead-construction-drone-effective",
-            category = "chemistry",
-            energy_required = 6,
-            ingredients =
             {
-              {
-                type="fluid", 
-                name="samurai-tears", 
-                amount=6,
-                temperature = 1200,
-              },
-              {"gamer-juice-fish-iron", 3},
-              {"powerful-sus-battery", 1},
+            type="fluid", 
+            name="samurai-tears", 
+            amount=6,
+            temperature = 1200,
             },
-            crafting_machine_tint =
-            {
-              primary = {r=146/255, g=249/255, b=239/255},
-              secondary = {r=242/255, g=129/255, b=1},
-              tertiary = {r=0, g=0, b=0, a = 0},
-              quaternary = {r=0, g=0, b=0, a = 0},
-            },
-            results=
-            {
-              {type="item", name="dead-construction-drone", amount=2, probability = 1},
-            },
-            icon = "__kupil-mujik-shlyapu__/graphics/icons/dead-c.png",
-            icon_size = 64,
-            order = "z[dead-robot-c]",
-            enabled = false
+            {"gamer-juice-fish-iron", 3},
+            {"powerful-sus-battery", 1},
         },
-  
+        crafting_machine_tint =
+        {
+            primary = {r=146/255, g=249/255, b=239/255},
+            secondary = {r=242/255, g=129/255, b=1},
+            tertiary = {r=0, g=0, b=0, a = 0},
+            quaternary = {r=0, g=0, b=0, a = 0},
+        },
+        results=
+        {
+            {type="item", name="dead-construction-drone", amount=2, probability = 1},
+        },
+        icon = "__kupil-mujik-shlyapu__/graphics/icons/dead-c.png",
+        icon_size = 64,
+        order = "z[dead-robot-c]",
+        enabled = false
+    },
+    {
+        type = "recipe",
+        name = "dead-reactor",
+        energy_required = 8,
+        enabled = false,
+        ingredients =
+        {
+            {"nuclear-reactor", 1},
+            {"processing-unit", 20}
+        },
+        result = "dead-reactor",
+        requester_paste_multiplier = 1
+    },
+    {
+        type = "recipe",
+        name = "glass-pipe",
+        energy_required = 2,
+        enabled = false,
+        ingredients = {{"steel-plate", 10}, {"copper-plate", 20}, {"glass", 20}, {"se-heat-shielding", 1}},
+        result = "glass-pipe",
+    },
+    {
+        type = "recipe",
+        name = "kettle",
+        category = "crafting-with-fluid",
+        enabled = false,
+        energy_required = 8,
+        ingredients =
+          {
+            {"steam-turbine", 1},
+            {"processing-unit", 20},
+            {type = "fluid", name = "samurai-tears", amount = 200}
+          },
+          results=
+          {
+            {type="item", name="kettle", amount=1, probability = 1},
+          },
+    },
+    {
+        type = "recipe",
+        name = "china",
+        category = "crafting-with-fluid",
+        enabled = false,
+        energy_required = 8,
+        ingredients =
+          {
+            {"heat-exchanger", 1},
+            {"processing-unit", 20},
+            {type = "fluid", name = "samurai-tears", amount = 200}
+          },
+          results=
+          {
+            {type="item", name="china", amount=1, probability = 1},
+          },
+    },
 })

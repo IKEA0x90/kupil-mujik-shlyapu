@@ -232,4 +232,96 @@ data:extend({
       count = 100
     }
   },
+  {
+    type = "technology",
+    name = "dead-energy",
+    icon = "__kupil-mujik-shlyapu__/graphics/icons/dead-energy-processing.png",
+    icon_size = 256, icon_mipmaps = 4,
+    effects = {
+      {
+        type = "unlock-recipe",
+        recipe = "dead-matter-dissolving"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "dead-plate"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "dead-fuel-cell"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "dead-data"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "head-crab"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "dead-reactor"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "glass-pipe"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "kettle"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "china"
+      },
+    },
+    prerequisites = { "rocket-silo", "uranium-processing" },
+    unit = {
+      ingredients = {
+        { "automation-science-pack", 1 },
+        { "logistic-science-pack", 1 },
+        { "chemical-science-pack", 1 },
+        { "se-rocket-science-pack", 1 },
+        { "space-science-pack", 1 },
+      },
+      time = 5,
+      count = 100
+    }
+  },
+  {
+    type = "technology",
+    name = "dead-robots",
+    icon = "__base__/graphics/technology/logistic-robotics.png",
+    icon_size = 256, icon_mipmaps = 4,
+    effects = {
+      {
+        type = "unlock-recipe",
+        recipe = "dead-construction-drone-effective"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "dead-construction-drone-ineffective"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "dead-logistic-drone-effective"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "dead-logistic-drone-ineffective"
+      },
+    },
+    prerequisites = { "dead-energy", "robotics" },
+    unit = {
+      ingredients = {
+        { "automation-science-pack", 1 },
+        { "logistic-science-pack", 1 },
+        { "chemical-science-pack", 1 },
+        { "se-rocket-science-pack", 1 },
+        { "space-science-pack", 1 },
+      },
+      time = 10,
+      count = 300
+    }
+  },
 })
