@@ -117,7 +117,7 @@ data:extend({
     icon = "__kupil-mujik-shlyapu__/graphics/icons/bad-bronze.png",
     icon_size = 64,
     order = "z[bad-bronze]",
-    enabled = true
+    enabled = false
   },
   {
     type = "recipe",
