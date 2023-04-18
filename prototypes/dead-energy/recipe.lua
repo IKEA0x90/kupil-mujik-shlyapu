@@ -76,7 +76,7 @@ data:extend({
     icon = "__kupil-mujik-shlyapu__/graphics/icons/bad-bronze.png",
     icon_size = 64,
     order = "z[bad-bronze]",
-    enabled = true
+    enabled = false
   },
   {
     type = "recipe",
@@ -96,7 +96,7 @@ data:extend({
     icon = "__kupil-mujik-shlyapu__/graphics/icons/bad-bronze.png",
     icon_size = 64,
     order = "z[bad-bronze]",
-    enabled = true
+    enabled = false
   },
   {
     type = "recipe",
@@ -131,7 +131,34 @@ data:extend({
     subgroup = "intermediate-product",
     order = "z[dead-matter-processing]-z[cell]",
     results = {{"dead-fuel-cell", 10}},
-    allow_decomposition = false
+    allow_decomposition = false,
+    crafting_machine_tint =
+    {
+      --[[
+      primary = Main Liqud
+      secondary = Secondary liquid
+      tertiary = Top smoke
+      quaternary = Bottom smoke
+      ]]--
+      base_color = {r=1, g=0, b=0, a = 1.0},
+      secondary = {r=1, g=0, b=0, a = 1.0},
+      tertiary = {r=1, g=0, b=0, a = 1.0},
+      quaternary = {r=1, g=0, b=0, a = 1.0},
+    },
+  },
+  {
+    type = "recipe",
+    name = "dead-data",
+    energy_required = 100,
+    enabled = false,
+    category = "crafting",
+    ingredients =
+    {
+      {"satellite", 1},
+      {"dead-data-prepare", 321},
+    },
+    result= "dead-data",
+    requester_paste_multiplier = 1
   },
   
 })
