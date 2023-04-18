@@ -1,33 +1,6 @@
 data:extend({
   {
     type = "technology",
-    name = "invisicar",
-    icon_size = 256, icon_mipmaps = 4,
-    icon = "__kupil-mujik-shlyapu__/graphics/technology/empty.png",
-    prerequisites = {"automobilism"},
-    unit =
-    {
-      count_formula = "250",
-      ingredients =
-      {
-        { "automation-science-pack", 1 },
-        { "logistic-science-pack", 1 },
-        { "chemical-science-pack", 1 },
-      },
-      time = 20
-    },
-    max_level = "1",
-    effects =
-    {
-      {
-        type = "unlock-recipe",
-        recipe= "invisicar"
-      }
-    },
-    order = "a-a"
-  },
-  {
-    type = "technology",
     name = "earlier-chest",
     icon = "__base__/graphics/technology/logistic-system.png",
     icon_size = 256, icon_mipmaps = 4,
@@ -99,10 +72,6 @@ data:extend({
     {
         type = "unlock-recipe",
         recipe = "bioturret"
-    },
-    {
-      type = "unlock-recipe",
-      recipe = "brr"
     },
     {
         type = "unlock-recipe",

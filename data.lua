@@ -1,5 +1,6 @@
 local p = "prototypes/"
 local dead = "prototypes/dead-energy/"
+local cars = "prototypes/cars/"
 
 require(p.."item")
 require(p.."recipe")
@@ -14,3 +15,5 @@ require(p.."turrets")
 require(dead.."entity")
 require(dead.."item")
 require(dead.."recipe")
+
+require(cars.."data")

@@ -2,47 +2,6 @@ data:extend(
 {
   {
     type = "recipe",
-    name = "brr",
-    enabled = false,
-    energy_required = 20,
-    ingredients =
-    {
-      {"sulfur", 100},
-      {"raw-fish", 20},
-      {"low-density-structure", 100},
-      {"processing-unit", 100},
-      {
-        type="fluid", 
-        name="samurai-tears", 
-        amount=1000
-      }
-    },
-    result = "brr",
-    category="crafting-with-fluid",
-    subgroup = "bullet"
-  },
-  {
-    type = "recipe",
-    name = "invisicar",
-    enabled = false,
-    energy_required = 20,
-    ingredients =
-    {
-      {"uranium-ore", 100},
-      {"low-density-structure", 50},
-      {"advanced-circuit", 50},
-      {
-        type="fluid", 
-        name="steam", 
-        amount=10000
-      }
-    },
-    result = "invisicar",
-    category="crafting-with-fluid",
-    subgroup = "bullet"
-  },
-  {
-    type = "recipe",
     name = "gamer-juice",
     category = "chemistry",
     energy_required = 1,

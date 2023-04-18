@@ -11,16 +11,6 @@ data:extend(
     stack_size = 1
   },
   {
-    type = "item-with-entity-data",
-    name = "invisicar",
-    icon = "__kupil-mujik-shlyapu__/graphics/icons/empty.png",
-    icon_size = 64, icon_mipmaps = 4,
-    subgroup = "bullet",
-    order = "b[personal-transport]-z[invisicar]",
-    place_result = "invisicar",
-    stack_size = 1
-  },
-  {
     type = "item",
     name = "interesting-battery",
     icon = "__kupil-mujik-shlyapu__/graphics/icons/interesting-battery.png",
