@@ -119,9 +119,9 @@ data:extend({
         order = "z[head-crab]",
         default_request_amount = 1,
         stack_size = 1
-    },
+      },
       {
-        type = "night-vision-equipment",
+        type = "movement-bonus-equipment",
         name = "head-crab",
         sprite =
         {
@@ -132,36 +132,19 @@ data:extend({
         },
         shape =
         {
-          width = 8,
+          width = 7,
           height = 8,
           type = "full"
         },
-        energy_input = "0kW",
-        color_lookup = {{0, "__core__/graphics/color_luts/lut-sunset.png"}},
         energy_source =
         {
           type = "electric",
-          buffer_capacity = "0kJ",
-          input_flow_limit = "0kW",
-          usage_priority = "primary-input"
+          usage_priority = "secondary-input"
         },
-        energy_consumption = "0kW",
+        energy_consumption = "1W",
+        movement_bonus = 4,
         categories = {"armor-jetpack"},
-        desaturation_params = 
-		{ 
-		  smoothstep_min = 0.1,
-		  smoothstep_max = 0.7,
-		  minimum = 0.3,
-		  maximum = 1.0
-		},
-		light_params = 
-		{ 
-		  smoothstep_min = 0.1,
-		  smoothstep_max = 0.7,
-		  minimum = 0.666,
-		  maximum = 1.0,
-		},
-    },
+      },
     {
       type = "fluid",
       name = "dead-matter-solution",

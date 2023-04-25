@@ -17,7 +17,6 @@ script.on_event(events.on_player_placed_equipment, function(event)
     if event.equipment.name == "head-crab" then
 		player.character_crafting_speed_modifier = player.character_crafting_speed_modifier + 5
         player.character_inventory_slots_bonus = player.character_inventory_slots_bonus + 20
-        player.character_running_speed_modifier = player.character_running_speed_modifier + 4
     end
 
 end)
@@ -41,16 +40,12 @@ script.on_event(events.on_player_removed_equipment, function(event)
             if event.count >= 0 then
                 local crafting = player.character_crafting_speed_modifier - (5 * event.count)
                 local inventory = player.character_inventory_slots_bonus - (20 * event.count)
-                local speed = player.character_running_speed_modifier - (4 * event.count)
             
                 if crafting >= 0 then
                 player.character_crafting_speed_modifier = crafting
                 end
                 if inventory > 0 then
                     player.character_inventory_slots_bonus = inventory
-                end
-                if speed > 0 then
-                    player.character_running_speed_modifier = speed
                 end
 
                 die_player(player) 
@@ -87,7 +82,6 @@ script.on_event(defines.events.on_player_armor_inventory_changed, function(event
 
 			set_inventory_local(player.character_crafting_speed_modifier, total_crafting)
             set_inventory_local(player.character_inventory_slots_bonus, total_inventory)	
-            set_inventory_local(player.character_running_speed_modifier, total_speed)
 		else
 			clear_all_bonuses(player)			
 		end	
@@ -103,7 +97,6 @@ end
 function clear_all_bonuses(player)
 	player.character_crafting_speed_modifier = 0
     player.character_inventory_slots_bonus = 0
-    player.character_running_speed_modifier = 0
 end
 
 function die_player(player)

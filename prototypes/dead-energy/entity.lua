@@ -1,4 +1,5 @@
 require ("util")
+local sounds = require("__base__/prototypes/entity/sounds")
 
 function make_heat_pipe_pictures(path, name_prefix, data, draw_as_glow)
     local all_pictures = {}
@@ -633,6 +634,8 @@ gamer.in_motion = spitterrunanimation(0.3, tint_1_spitter_small, {r=221/255, g=2
 gamer.in_motion.hr_version = spitterrunanimation(0.3, tint_1_spitter_small, {r=221/255, g=201/255, b=0/255})
 gamer.in_motion_with_cargo = spitterrunanimation(0.3, tint_1_spitter_small, {r=221/255, g=201/255, b=0/255})
 gamer.in_motion_with_cargo.hr_version = spitterrunanimation(0.3, tint_1_spitter_small, {r=221/255, g=201/255, b=0/255})
+gamer.working_sound = sounds.spitter_walk(0.3)
+gamer.max_payload_size = 2
 
 local gamer2 = table.deepcopy(data.raw["construction-robot"]["construction-robot"])
 gamer2.name = "dead-construction-drone"
@@ -643,6 +646,8 @@ gamer2.idle = biterrunanimation(0.3, small_biter_tint1, {r=221/255, g=201/255, b
 gamer2.idle.hr_version = biterrunanimation(0.3, small_biter_tint1, {r=221/255, g=201/255, b=0/255})
 gamer2.in_motion = biterrunanimation(0.3, small_biter_tint1, {r=221/255, g=201/255, b=0/255})
 gamer2.in_motion.hr_version = biterrunanimation(0.3, small_biter_tint1, {r=221/255, g=201/255, b=0/255})
+gamer2.working_sound = sounds.biter_walk(0.3)
+gamer2.max_payload_size = 2
 
 data:extend(
 {

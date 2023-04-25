@@ -42,7 +42,6 @@ data:extend({
     name = "dead-plate",
     category = "smelting",
     energy_required = 24,
-    hide_from_player_crafting = true,
     ingredients =
     {
         {type="item", name="copper-iron-plate", amount=100},
@@ -53,9 +52,9 @@ data:extend({
     {
         {type="item", name="dead-plate", amount=2},
     },
-    icon = "__kupil-mujik-shlyapu__/graphics/icons/bad-bronze.png",
+    icon = "__kupil-mujik-shlyapu__/graphics/icons/dead-plate.png",
     icon_size = 64,
-    order = "z[bad-bronze]",
+    order = "z[dead-plate]",
     enabled = false
   },
   {
@@ -122,6 +121,7 @@ data:extend({
     name = "spawning-fluid-effective",
     category = "chemistry",
     energy_required = 6,
+    hide_from_player_crafting = true,
     ingredients =
     {
       {
@@ -152,6 +152,7 @@ data:extend({
     name = "spawning-fluid-ineffective",
     category = "chemistry",
     energy_required = 6,
+    hide_from_player_crafting = true,
     ingredients =
     {
       {
@@ -180,13 +181,13 @@ data:extend({
     type = "recipe",
     name = "dead-logistic-drone",
     category = "chemistry",
-    energy_required = 20,
+    energy_required = 3,
     ingredients =
     {
       {
           type="fluid", 
           name="spawning-fluid", 
-          amount=2,
+          amount=1,
       },
       {"gamer-juice-fish", 3},
       {"powerful-sus-battery", 1},
@@ -211,13 +212,13 @@ data:extend({
         type = "recipe",
         name = "dead-construction-drone",
         category = "chemistry",
-        energy_required = 20,
+        energy_required = 3,
         ingredients =
         {
             {
               type="fluid", 
               name="spawning-fluid", 
-              amount=2,
+              amount=1,
             },
             {"gamer-juice-fish-iron", 3},
             {"powerful-sus-battery", 1},

@@ -299,6 +299,7 @@ data:extend(
     result = "copper-cable",
     result_count = 4,
     enabled = false,
+    allow_as_intermediate = false,
   },
   {
     type = "recipe",
@@ -307,6 +308,7 @@ data:extend(
     result = "iron-gear-wheel",
     result_count = 1,
     enabled = false,
+    allow_as_intermediate = false,
   },
   {
     type = "recipe",
@@ -354,7 +356,6 @@ data:extend(
     name = "copper-iron",
     category = "smelting",
     energy_required = 2,
-    hide_from_player_crafting = true,
     ingredients =
     {
         {type="fluid", name="bad-bronze", amount=2}
