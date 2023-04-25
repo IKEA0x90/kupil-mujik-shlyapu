@@ -4,7 +4,7 @@ local built = { events.on_built_entity, events.on_robot_built_entity }
 Event = require('__space-exploration__/scripts/event')
 
 function is_alive(entity)
-    return (entity.name == "dead-converter") or (entity.name == "brr") --or (entity.name == "living-wall")
+    return (entity.name == "dead-converter") or (entity.name == "brr") or (entity.name == "car-biter-behemoth") or (entity.name == "car-player")--or (entity.name == "living-wall")
 end
 
 script.on_event(events.on_player_placed_equipment, function(event)

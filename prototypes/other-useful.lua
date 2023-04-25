@@ -36,6 +36,18 @@ data:extend({
     icon_size = 64, icon_mipmaps = 4,
     order = "z[molten-fish]"
 },
+{
+  type = "fluid",
+  name = "spawning-fluid",
+  default_temperature = 1000,
+  max_temperature = 1200,
+  heat_capacity = "1GJ",
+  base_color = {r=221/255, g=201/255, b=0/255},
+  flow_color = {r=221/255, g=201/255, b=0/255},
+  icon = "__kupil-mujik-shlyapu__/graphics/icons/spawning-liquid.png",
+  icon_size = 770, icon_mipmaps = 1,
+  order = "z[spawning-liquid]"
+},
   {
     type = "equipment-grid",
     name = "brr-equipment-grid",

@@ -608,6 +608,12 @@ data:extend({
     },
     {
         type = "fuel-category",
+        name = "kms-car-fuel",
+        localised_name = "Scrap",
+        localised_description = "Scrap"
+    },
+    {
+        type = "fuel-category",
         name = "sus-battery",
         localised_name = "sus batteries",
         localised_description = "this will probably kill you"

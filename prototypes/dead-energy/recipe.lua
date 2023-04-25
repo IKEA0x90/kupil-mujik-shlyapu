@@ -119,25 +119,84 @@ data:extend({
   },
   {
     type = "recipe",
-    name = "dead-logistic-drone-ineffective",
+    name = "spawning-fluid-effective",
+    category = "chemistry",
+    energy_required = 6,
+    ingredients =
+    {
+      {
+          type="fluid", 
+          name="samurai-tears", 
+          amount=24,
+          temperature = 1200,
+      },
+    },
+    crafting_machine_tint =
+    {
+      primary = {r=146/255, g=249/255, b=239/255},
+      secondary = {r=221/255, g=201/255, b=0/255},
+      tertiary = {r=146/255, g=249/255, b=239/255},
+      quaternary = {r=221/255, g=201/255, b=0/255},
+    },
+    results=
+    {
+      {type="fluid", name="spawning-fluid", amount=3, probability = 1},
+    },
+    icon = "__kupil-mujik-shlyapu__/graphics/icons/spawning-liquid.png",
+    icon_size = 770,
+    order = "z[spawning-liquid]",
+    enabled = false
+  },
+  {
+    type = "recipe",
+    name = "spawning-fluid-ineffective",
+    category = "chemistry",
+    energy_required = 6,
+    ingredients =
+    {
+      {
+          type="fluid", 
+          name="samurai-tears", 
+          amount=200,
+      },
+    },
+    crafting_machine_tint =
+    {
+      primary = {r=146/255, g=249/255, b=239/255},
+      secondary = {r=221/255, g=201/255, b=0/255},
+      tertiary = {r=146/255, g=249/255, b=239/255},
+      quaternary = {r=221/255, g=201/255, b=0/255},
+    },
+    results=
+    {
+      {type="fluid", name="spawning-fluid", amount=1, probability = 1},
+    },
+    icon = "__kupil-mujik-shlyapu__/graphics/icons/spawning-liquid.png",
+    icon_size = 770,
+    order = "z[spawning-liquid]",
+    enabled = false
+  },
+  {
+    type = "recipe",
+    name = "dead-logistic-drone",
     category = "chemistry",
     energy_required = 20,
     ingredients =
     {
       {
-        type="fluid", 
-        name="samurai-tears", 
-        amount=200,
+          type="fluid", 
+          name="spawning-fluid", 
+          amount=2,
       },
       {"gamer-juice-fish", 3},
       {"powerful-sus-battery", 1},
     },
     crafting_machine_tint =
     {
-      primary = {r=146/255, g=249/255, b=239/255},
+      primary = {r=221/255, g=201/255, b=0/255},
       secondary = {r=242/255, g=129/255, b=1},
-      tertiary = {r=0, g=0, b=0, a = 0},
-      quaternary = {r=0, g=0, b=0, a = 0},
+      tertiary = {r=221/255, g=201/255, b=0/255},
+      quaternary = {r=242/255, g=129/255, b=1},
     },
     results=
     {
@@ -150,93 +209,29 @@ data:extend({
     },
     {
         type = "recipe",
-        name = "dead-logistic-drone-effective",
-        category = "chemistry",
-        energy_required = 6,
-        ingredients =
-        {
-          {
-            type="fluid", 
-            name="samurai-tears", 
-            amount=6,
-            temperature = 1200,
-          },
-          {"gamer-juice-fish", 3},
-          {"powerful-sus-battery", 1},
-        },
-        crafting_machine_tint =
-        {
-          primary = {r=146/255, g=249/255, b=239/255},
-          secondary = {r=242/255, g=129/255, b=1},
-          tertiary = {r=0, g=0, b=0, a = 0},
-          quaternary = {r=0, g=0, b=0, a = 0},
-        },
-        results=
-        {
-          {type="item", name="dead-logistic-drone", amount=2, probability = 1},
-        },
-        icon = "__kupil-mujik-shlyapu__/graphics/icons/dead-l.png",
-        icon_size = 64,
-        order = "z[dead-robot-l]",
-        enabled = false
-    },
-    {
-        type = "recipe",
-        name = "dead-construction-drone-ineffective",
+        name = "dead-construction-drone",
         category = "chemistry",
         energy_required = 20,
         ingredients =
         {
             {
-            type="fluid", 
-            name="samurai-tears", 
-            amount=200,
+              type="fluid", 
+              name="spawning-fluid", 
+              amount=2,
             },
             {"gamer-juice-fish-iron", 3},
             {"powerful-sus-battery", 1},
         },
         crafting_machine_tint =
         {
-            primary = {r=146/255, g=249/255, b=239/255},
+            primary = {r=221/255, g=201/255, b=0/255},
             secondary = {r=242/255, g=129/255, b=1},
-            tertiary = {r=0, g=0, b=0, a = 0},
-            quaternary = {r=0, g=0, b=0, a = 0},
+            tertiary = {r=221/255, g=201/255, b=0/255},
+            quaternary = {r=242/255, g=129/255, b=1},
         },
         results=
         {
             {type="item", name="dead-construction-drone", amount=1, probability = 1},
-        },
-        icon = "__kupil-mujik-shlyapu__/graphics/icons/dead-c.png",
-        icon_size = 64,
-        order = "z[dead-robot-c]",
-        enabled = false
-    },
-    {
-        type = "recipe",
-        name = "dead-construction-drone-effective",
-        category = "chemistry",
-        energy_required = 6,
-        ingredients =
-        {
-            {
-            type="fluid", 
-            name="samurai-tears", 
-            amount=6,
-            temperature = 1200,
-            },
-            {"gamer-juice-fish-iron", 3},
-            {"powerful-sus-battery", 1},
-        },
-        crafting_machine_tint =
-        {
-            primary = {r=146/255, g=249/255, b=239/255},
-            secondary = {r=242/255, g=129/255, b=1},
-            tertiary = {r=0, g=0, b=0, a = 0},
-            quaternary = {r=0, g=0, b=0, a = 0},
-        },
-        results=
-        {
-            {type="item", name="dead-construction-drone", amount=2, probability = 1},
         },
         icon = "__kupil-mujik-shlyapu__/graphics/icons/dead-c.png",
         icon_size = 64,

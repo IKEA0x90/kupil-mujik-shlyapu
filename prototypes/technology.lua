@@ -244,7 +244,7 @@ data:extend({
         recipe = "china"
       },
     },
-    prerequisites = { "rocket-silo", "uranium-processing" },
+    prerequisites = { "rocket-silo", "uranium-processing", "bad-bronze" },
     unit = {
       ingredients = {
         { "automation-science-pack", 1 },
@@ -265,19 +265,19 @@ data:extend({
     effects = {
       {
         type = "unlock-recipe",
-        recipe = "dead-construction-drone-effective"
+        recipe = "spawning-fluid-ineffective"
       },
       {
         type = "unlock-recipe",
-        recipe = "dead-construction-drone-ineffective"
+        recipe = "spawning-fluid-effective"
       },
       {
         type = "unlock-recipe",
-        recipe = "dead-logistic-drone-effective"
+        recipe = "dead-logistic-drone"
       },
       {
         type = "unlock-recipe",
-        recipe = "dead-logistic-drone-ineffective"
+        recipe = "dead-construction-drone"
       },
     },
     prerequisites = { "dead-energy", "robotics" },

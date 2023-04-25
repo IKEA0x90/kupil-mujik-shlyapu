@@ -1,6 +1,6 @@
 {
 	"name": "kupil-mujik-shlyapu",
-	"version": "1.6.0",
+	"version": "1.6.2",
 	"title": "Kupil Mujik Shlyapu",
 	"author": "IKEA",
 	"dependencies": ["base >= 1.1", "space-exploration >= 0.6.0", "alien-biomes", "rp_warfare >= 0.5.0", "bobenemies"],

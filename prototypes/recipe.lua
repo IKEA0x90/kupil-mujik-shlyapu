@@ -91,15 +91,15 @@ data:extend(
     ingredients =
     {
       {
-      type="fluid", 
-      name="molten-fish", 
-      amount = 10
+        type="fluid", 
+        name="molten-fish", 
+        amount = 10
       },
       {
-      type="fluid", 
-      name="gamer-juice", 
-      amount = 100,
-      temperature = 100
+        type="fluid", 
+        name="gamer-juice", 
+        amount = 100,
+        temperature = 100
       }
     },
     crafting_machine_tint =

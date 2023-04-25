@@ -625,24 +625,24 @@ gamer.name = "dead-logistic-drone"
 gamer.minable = { mining_time = 0.05, result = "dead-logistic-drone" }
 gamer.speed = 0.25
 gamer.max_energy = "4MJ"
-gamer.idle = spitterrunanimation(0.3, {r=146/255, g=249/255, b=239/255}, {r=146/255, g=249/255, b=239/255})
-gamer.idle.hr_version = spitterrunanimation(0.3, {r=146/255, g=249/255, b=239/255}, {r=146/255, g=249/255, b=239/255})
-gamer.idle_with_cargo = spitterrunanimation(0.3, {r=146/255, g=249/255, b=239/255}, {r=146/255, g=249/255, b=239/255})
-gamer.idle_with_cargo.hr_version = spitterrunanimation(0.3, {r=146/255, g=249/255, b=239/255}, {r=146/255, g=249/255, b=239/255})
-gamer.in_motion = spitterrunanimation(0.3, {r=146/255, g=249/255, b=239/255}, {r=146/255, g=249/255, b=239/255})
-gamer.in_motion.hr_version = spitterrunanimation(0.3, {r=146/255, g=249/255, b=239/255}, {r=146/255, g=249/255, b=239/255})
-gamer.in_motion_with_cargo = spitterrunanimation(0.3, {r=146/255, g=249/255, b=239/255}, {r=146/255, g=249/255, b=239/255})
-gamer.in_motion_with_cargo.hr_version = spitterrunanimation(0.3, {r=146/255, g=249/255, b=239/255}, {r=146/255, g=249/255, b=239/255})
+gamer.idle = spitterrunanimation(0.3, tint_1_spitter_small, {r=221/255, g=201/255, b=0/255})
+gamer.idle.hr_version = spitterrunanimation(0.3, tint_1_spitter_small, {r=221/255, g=201/255, b=0/255})
+gamer.idle_with_cargo = spitterrunanimation(0.3, tint_1_spitter_small, {r=221/255, g=201/255, b=0/255})
+gamer.idle_with_cargo.hr_version = spitterrunanimation(0.3, tint_1_spitter_small, {r=221/255, g=201/255, b=0/255})
+gamer.in_motion = spitterrunanimation(0.3, tint_1_spitter_small, {r=221/255, g=201/255, b=0/255})
+gamer.in_motion.hr_version = spitterrunanimation(0.3, tint_1_spitter_small, {r=221/255, g=201/255, b=0/255})
+gamer.in_motion_with_cargo = spitterrunanimation(0.3, tint_1_spitter_small, {r=221/255, g=201/255, b=0/255})
+gamer.in_motion_with_cargo.hr_version = spitterrunanimation(0.3, tint_1_spitter_small, {r=221/255, g=201/255, b=0/255})
 
 local gamer2 = table.deepcopy(data.raw["construction-robot"]["construction-robot"])
 gamer2.name = "dead-construction-drone"
 gamer2.minable = { mining_time = 0.05, result = "dead-construction-drone" }
 gamer2.speed = 0.25
 gamer2.max_energy = "4MJ"
-gamer2.idle = biterrunanimation(0.3, {r=146/255, g=249/255, b=239/255}, {r=146/255, g=249/255, b=239/255})
-gamer2.idle.hr_version = biterrunanimation(0.3, {r=146/255, g=249/255, b=239/255}, {r=146/255, g=249/255, b=239/255})
-gamer2.in_motion = biterrunanimation(0.3, {r=146/255, g=249/255, b=239/255}, {r=146/255, g=249/255, b=239/255})
-gamer2.in_motion.hr_version = biterrunanimation(0.3, {r=146/255, g=249/255, b=239/255}, {r=146/255, g=249/255, b=239/255})
+gamer2.idle = biterrunanimation(0.3, small_biter_tint1, {r=221/255, g=201/255, b=0/255})
+gamer2.idle.hr_version = biterrunanimation(0.3, small_biter_tint1, {r=221/255, g=201/255, b=0/255})
+gamer2.in_motion = biterrunanimation(0.3, small_biter_tint1, {r=221/255, g=201/255, b=0/255})
+gamer2.in_motion.hr_version = biterrunanimation(0.3, small_biter_tint1, {r=221/255, g=201/255, b=0/255})
 
 data:extend(
 {
