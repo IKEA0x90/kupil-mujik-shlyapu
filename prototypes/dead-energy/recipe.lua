@@ -140,7 +140,7 @@ data:extend({
     },
     results=
     {
-      {type="fluid", name="spawning-fluid", amount=3, probability = 1},
+      {type="fluid", name="spawning-fluid", amount=6, probability = 1},
     },
     icon = "__kupil-mujik-shlyapu__/graphics/icons/spawning-liquid.png",
     icon_size = 770,
@@ -170,7 +170,7 @@ data:extend({
     },
     results=
     {
-      {type="fluid", name="spawning-fluid", amount=1, probability = 1},
+      {type="fluid", name="spawning-fluid", amount=2, probability = 1},
     },
     icon = "__kupil-mujik-shlyapu__/graphics/icons/spawning-liquid.png",
     icon_size = 770,
@@ -187,7 +187,7 @@ data:extend({
       {
           type="fluid", 
           name="spawning-fluid", 
-          amount=1,
+          amount=2,
       },
       {"gamer-juice-fish", 3},
       {"powerful-sus-battery", 1},
@@ -218,7 +218,7 @@ data:extend({
             {
               type="fluid", 
               name="spawning-fluid", 
-              amount=1,
+              amount=2,
             },
             {"gamer-juice-fish-iron", 3},
             {"powerful-sus-battery", 1},
